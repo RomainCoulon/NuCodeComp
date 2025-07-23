@@ -3,26 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <title>File Publisher</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: sans-serif; background: #f9f9f9; padding: 2rem; }
+    .container { max-width: 600px; margin: auto; background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1, h2 { color: #333; }
+    .file-list a { color: #007bff; text-decoration: none; }
+    .file-list a:hover { text-decoration: underline; }
+    .btn { background: #007bff; color: white; padding: 0.5rem 1rem; border: none; border-radius: 5px; cursor: pointer; }
+    .btn:hover { background: #0056b3; }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
-    <h1 class="text-2xl font-bold mb-4">📤 Upload a File</h1>
-    <form action="/upload" enctype="multipart/form-data" method="post" class="mb-6">
-      <input name="file" type="file" class="mb-4" required>
-      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" type="submit">Upload</button>
+<body>
+  <div class="container">
+    <h1>📤 Upload a File</h1>
+    <form action="/upload" enctype="multipart/form-data" method="post">
+      <input name="file" type="file" required>
+      <button class="btn" type="submit">Upload</button>
     </form>
 
-    <h2 class="text-xl font-semibold mb-2">📁 Files:</h2>
-    <ul class="list-disc pl-5">
-      {% for file in files %}
-        <li>
-          <a class="text-blue-600 hover:underline" href="/uploads/{{ file }}" target="_blank">{{ file }}</a>
-        </li>
+    <h2>📁 Uploaded Files</h2>
+    <ul class="file-list">
+      {% for file in uploaded_files %}
+        <li><a href="/uploads/{{ file }}" target="_blank">{{ file }}</a></li>
       {% else %}
-        <li>No files yet.</li>
+        <li>No files uploaded yet.</li>
       {% endfor %}
     </ul>
+
+    <h2>📥 Available Project Files</h2>
+    <ul class="file-list">
+      {% for file in project_files %}
+      <li><a href="/project_files/{{ file }}" download>{{ file }}</a></li>
+    {% else %}
+      <li>No project files available.</li>
+    {% endfor %}
+    </ul>
   </div>
+
 </body>
 </html>
