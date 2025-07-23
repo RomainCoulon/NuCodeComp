@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>File Publisher</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <div class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+    <h1 class="text-2xl font-bold mb-4">📤 Upload a File</h1>
+    <form action="/upload" enctype="multipart/form-data" method="post" class="mb-6">
+      <input name="file" type="file" class="mb-4" required>
+      <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700" type="submit">Upload</button>
+    </form>
+
+    <h2 class="text-xl font-semibold mb-2">📁 Files:</h2>
+    <ul class="list-disc pl-5">
+      {% for file in files %}
+        <li>
+          <a class="text-blue-600 hover:underline" href="/uploads/{{ file }}" target="_blank">{{ file }}</a>
+        </li>
+      {% else %}
+        <li>No files yet.</li>
+      {% endfor %}
+    </ul>
+  </div>
+</body>
+</html>
