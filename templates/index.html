@@ -1,26 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>File Upload & Download Interface</title>
+    <title>NuCodeComp</title>
+    <style>
+        .file-item {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .file-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .file-description {
+            font-style: italic;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .download-button {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-    <h1>File Upload & Download Interface</h1>
+    <h1>NuCodeComp 5</h1>
     <div>
-        <!-- Download Button -->
-        <form method="get" action="/download/{{ filename }}" style="display:inline-block; margin-right:20px;">
-            {% if filename %}
-            <button type="submit">Download {{ filename }}</button>
-            {% else %}
-            <span>No file to download.</span>
-            {% endif %}
-        </form>
+        {% if file_data %}
+            {% for file in file_data %}
+            <div class="file-item">
+                <div class="file-name">{{ file.name }}</div>
+                <div class="file-description">{{ file.description }}</div>
+                <form method="get" action="/download/{{ file.name }}" style="display:inline-block;">
+                    <button type="submit" class="download-button">Download</button>
+                </form>
+            </div>
+            {% endfor %}
+        {% else %}
+            <span>No files to download.</span>
+        {% endif %}
     </div>
-    <div style="margin-top:15px;">
-        <!-- Upload Button -->
-        <form method="post" action="/upload" enctype="multipart/form-data" style="display:inline-block;">
-            <input type="file" name="file" required>
-            <button type="submit">Upload File</button>
-        </form>
-    </div>
-</body>
+    </body>
 </html>
