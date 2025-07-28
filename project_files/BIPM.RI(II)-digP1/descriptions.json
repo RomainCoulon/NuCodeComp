@@ -1,5 +1,6 @@
 {
     "metadata.csv": "Metadata of the project, including details about the source, measurement conditions, and reference date.",
+    "reportingForm.csv": "Reporting form for the project, which needs to be filled out with the results of the measurements and sent to digitalRI@bipm.org.",
     "PMTA_background.csv": "Signal (CAEN list-mode format) of the first PMT during the background measurement.",
     "PMTA_source.csv": "Signal (CAEN list-mode format) of the first PMT during the source measurement.",
     "PMTB_background.csv": "Signal (CAEN list-mode format) of the second PMT during the background measurement.",
