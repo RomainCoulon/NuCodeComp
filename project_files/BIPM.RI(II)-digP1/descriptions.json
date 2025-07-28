@@ -1,0 +1,11 @@
+{
+    "metadata.csv": "Metadata of the project, including details about the source, measurement conditions, and reference date.",
+    "PMTA_background.csv": "Signal (CAEN list-mode format) of the first PMT during the background measurement.",
+    "PMTA_source.csv": "Signal (CAEN list-mode format) of the first PMT during the source measurement.",
+    "PMTB_background.csv": "Signal (CAEN list-mode format) of the second PMT during the background measurement.",
+    "PMTB_source.csv": "Signal (CAEN list-mode format) of the second PMT during the source measurement.",
+    "PMTC_background.csv": "Signal (CAEN list-mode format) of the third PMT during the background measurement.",
+    "PMTC_source.csv": "Signal (CAEN list-mode format) of the third PMT during the source measurement.",
+    "Gamma_Channel_background.csv": "Signal (CAEN list-mode format) of the gamma detector during the background measurement.",
+    "Gamma_Channel_source.csv": "Signal (CAEN list-mode format) of the gamma detector during the source measurement."
+}

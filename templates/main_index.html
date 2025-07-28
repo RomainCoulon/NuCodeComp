@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NuCodeComp - Projects</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        h1 { color: #333; }
+        .project-list {
+            margin-top: 20px;
+        }
+        .project-item {
+            margin-bottom: 10px;
+        }
+        .project-link {
+            display: inline-block;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+        .project-link:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>NuCodeComp</h1>
+    <p>v0.1 - 2025-07-28</p>
+    <p>
+        The <strong>International Bureau of Weights and Measures (BIPM)</strong> has launched the <strong>NuCodeComp</strong> project — a collaborative platform for <em>digital comparisons in radionuclide metrology</em>.
+    </p>
+
+    <p>
+        NuCodeComp is designed to support the <strong>validation of algorithms and software</strong> used in the analysis of radioactivity measurements. It provides a standardized framework that enables participants to <strong>analyze common benchmark datasets</strong>, share their results, and compare their performance across the community.
+    </p>
+
+    <p>
+        As part of the initiative, a series of <strong>benchmarked measurement projects</strong> (e.g., <code>BIPM.RI(II)-digP1</code>, <code>BIPM.RI(II)-digP2</code>, ...) are provided. Each project includes:
+    </p>
+
+    <ul>
+        <li>Standardized <strong>list-mode data files</strong></li>
+        <li>Accompanying <strong>metadata</strong></li>
+        <li>A downloadable <strong>results submission form</strong></li>
+    </ul>
+
+    <p>
+        <strong>How to Participate:</strong>
+    </p>
+    <ol>
+        <li><strong>Download</strong> one of the benchmark projects and its associated data files from the list below.</li>
+        <li><strong>Analyze</strong> the data using your own software or algorithms.</li>
+        <li><strong>Complete</strong> the <code>resultForm.xlsx</code> with your findings.</li>
+        <li><strong>Submit</strong> the completed form by email to <a href="mailto:digital.RI@bipm.org">digital.RI@bipm.org</a>.</li>
+    </ol>
+
+    <p>For assistance with ensuring interoperability with your software’s input format, please contact <a href="mailto:John.Keightley@npl.co.uk">John.Keightley@npl.co.uk</a>.</p>
+    <hr>
+    <div class="project-list">
+        {% if project_folders %}
+            {% for folder_name in project_folders %}
+            <div class="project-item">
+                <a href="/project/{{ folder_name }}" class="project-link">{{ folder_name }}</a>
+            </div>
+            {% endfor %}
+        {% else %}
+            <span>No project folders found.</span>
+        {% endif %}
+    </div>
+</body>
+</html>

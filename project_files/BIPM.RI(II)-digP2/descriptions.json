@@ -1,0 +1,9 @@
+{
+    "metadata.csv": "Metadata of the project, including details about the source, measurement conditions, and reference date.",
+    "TDCR_D00.csv": "Signal (CAEN list-mode format) of the 3 PMTs (time-sorted) during the source measurement withour grey filter.",
+    "TDCR_D01.csv": "Signal (CAEN list-mode format) of the 3 PMTs (time-sorted) during the source measurement with grey filter of neutral density 0.1.",
+    "TDCR_D02.csv": "Signal (CAEN list-mode format) of the 3 PMTs (time-sorted) during the source measurement with grey filter of neutral density 0.2.",
+    "TDCR_D03.csv": "Signal (CAEN list-mode format) of the 3 PMTs (time-sorted) during the source measurement with grey filter of neutral density 0.3.",
+    "TDCR_D04.csv": "Signal (CAEN list-mode format) of the 3 PMTs (time-sorted) during the source measurement with grey filter of neutral density 0.4.",
+    "TDCR_D05.csv": "Signal (CAEN list-mode format) of the 3 PMTs (time-sorted) during the source measurement with grey filter of neutral density 0.5."
+}
