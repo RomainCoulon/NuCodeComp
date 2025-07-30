@@ -13,8 +13,12 @@ Measurement_device;BIPM TDCR system #1
 Sampling_rate;1 GHz
 Resolution;10 bits
 Discriminator_type;Edge
+Time_base_digitizer (s-1);1.00E-12
 Scintillator;Ultima Gold
 Volume (mL);16
+Trigger_holdoff_beta (ns);48
+Long_gate_beta (ns);100
+Firmware;DPP-PSD
 Measurement_date (background);X
 Measurement_date (source ND00);2025-05-13T09:41:49Z
 Measurement_date (source ND01);2025-05-13T11:45:42Z

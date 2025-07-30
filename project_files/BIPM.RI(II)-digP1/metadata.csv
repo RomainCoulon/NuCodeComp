@@ -4,16 +4,22 @@ Data_type;Experimental
 Service_category;https://si-digital-framework.org/kcdb-sc/RI/RAD-1.3.1
 Measurand;Activity
 Radionuclide;Co-60
-Measurement_type;4piBeta-Gamma
+Measurement_type;4piBeta(TDCR)-Gamma
 Method_code;4P-LS-BP-NA-GR-CO
 Opening_date;2025-07-28T00:00:00Z
 Closing_date;2026-12-15T00:00:00Z
 Reference_date;2021-02-22T12:00:00Z
 Measurement_device;BIPM 4pi(TDCR)beta-NaI(gamma) coincidence counting system #1
-Sampling_rate;500 kHz
+Sampling_rate;500 GHz
 Resolution;14 bits
 Discriminator_type;Edge
+Time_base_digitizer (s-1);1.00E-12
 Scintillator;Ultima Gold
 Volume (mL);10
 Measurement_date (background);2024-12-13T08:14:25Z
 Measurement_date (source);2024-12-13T10:21:00Z
+Trigger_holdoff_beta (ns);1024
+Trigger_holdoff_gamma (ns);1024
+Firmware;DPP-PSD
+Long_gate_beta (ns);300
+Long_gate_gamma (ns);2500
